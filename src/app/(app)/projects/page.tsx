@@ -1,30 +1,25 @@
-import Link from 'next/link'
+import { columns } from '@/components/projects/columns'
+import { DataTable } from '@/components/projects/data-table'
+import { NewProjectDialog } from '@/components/projects/new-project-dialog'
+import { mockProjects } from '@/lib/mock-data'
 
 export const metadata = {
   title: 'Projects — TaskFlow',
 }
 
-const mockProjects = [
-  { id: '1', name: 'Website redesign' },
-  { id: '2', name: 'Mobile app v2' },
-  { id: '3', name: 'API refactor' },
-]
-
 export default function ProjectsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-6">Projects</h1>
-      <div className="grid gap-3">
-        {mockProjects.map((p) => (
-          <Link
-            key={p.id}
-            href={`/projects/${p.id}`}
-            className="block p-4 border border-gray-200 rounded hover:bg-gray-50"
-          >
-            {p.name}
-          </Link>
-        ))}
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
+          <p className="text-muted-foreground mt-1">
+            Manage your projects and track progress.
+          </p>
+        </div>
+        <NewProjectDialog />
       </div>
+      <DataTable columns={columns} data={mockProjects} />
     </div>
   )
 }
