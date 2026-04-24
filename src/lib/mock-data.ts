@@ -1,4 +1,4 @@
-import type { Project } from './types'
+import type { Project, Task } from './types'
 
 export const mockProjects: Project[] = [
   {
@@ -42,5 +42,71 @@ export const mockProjects: Project[] = [
     status: 'Planning',
     taskCount: 7,
     createdAt: new Date('2026-04-10'),
+  },
+]
+
+export const mockTasks: Task[] = [
+  {
+    id: 't1',
+    projectId: '1',
+    title: 'Set up design system',
+    description: 'Define tokens and base components',
+    status: 'Done',
+    priority: 'High',
+    createdAt: new Date('2026-03-02'),
+  },
+  {
+    id: 't2',
+    projectId: '1',
+    title: 'Rebuild hero section',
+    description: null,
+    status: 'InProgress',
+    priority: 'High',
+    createdAt: new Date('2026-03-05'),
+  },
+  {
+    id: 't3',
+    projectId: '1',
+    title: 'Migrate pricing page',
+    description: 'Include comparison table',
+    status: 'Todo',
+    priority: 'Medium',
+    createdAt: new Date('2026-03-10'),
+  },
+  {
+    id: 't4',
+    projectId: '2',
+    title: 'Implement push notifications',
+    description: null,
+    status: 'InProgress',
+    priority: 'High',
+    createdAt: new Date('2026-02-20'),
+  },
+  {
+    id: 't5',
+    projectId: '2',
+    title: 'Add offline mode',
+    description: 'Cache last viewed tasks',
+    status: 'Todo',
+    priority: 'Medium',
+    createdAt: new Date('2026-03-01'),
+  },
+  {
+    id: 't6',
+    projectId: '3',
+    title: 'Document API v2 endpoints',
+    description: null,
+    status: 'Todo',
+    priority: 'Low',
+    createdAt: new Date('2026-04-02'),
+  },
+  {
+    id: 't7',
+    projectId: '3',
+    title: 'Benchmark current API',
+    description: 'p50 / p95 / p99',
+    status: 'InProgress',
+    priority: 'Medium',
+    createdAt: new Date('2026-04-05'),
   },
 ]
